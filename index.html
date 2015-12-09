@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/angular.js"></script>
+
+<!--
+<div ng-app="myApp" ng-controller="myCtrl">
+&lt;!&ndash;<p>输入字符</p>
+<input type="text" ng-model="name">
+   姓名： <input TYPE="text" data-ng-model="username">
+ 密码：<input TYPE="text" ng-model="pw">
+
+
+    信息:{{username + " " + pw}}
+
+</div>&ndash;&gt;
+<div data-ng-app="" data-ng-init="names=['Jani','qweq','wq']">
+
+    <ul>
+   <li data-ng-repeat="x in names">
+{{ x }}</li></ul>
+</div>
+<div data-ng-app="" data-ng-init="names=['Jani','Hege','Kai']">
+    <p>使用 ng-repeat 来循环数组</p>
+    <ul>
+        <li data-ng-repeat="x in names">
+            {{ x }}
+        </li>
+    </ul>
+</div>
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    名: <input type="text" ng-model="firstName"><br>
+    姓: <input type="text" ng-model="lastName"><br>
+    <br>
+    姓名: {{firstName + " " + lastName}}
+
+</div>
+<script>
+    var app =angular.module('myApp',[]);
+    app.controller('myCtrl',function($scope){
+        $scope.username="zhangsan";
+        $scope.pw="123456";
+    })
+</script>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.firstName= "zhangsan";
+        $scope.lastName= "123456";
+    });
+</script>
+
+-->
+
+
+
+    <script src="angular.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var app = angular.module('myapp',[])
+                .value('test','widuu')
+                .factory('testfactory',function(test){
+                    return{
+                        lable:function(){
+                            return "this can output : hello "+ test;
+                        }
+                    }
+                });
+        app.controller('mytest',function($scope,test,testfactory){
+            $scope.test = "hello "+ test;
+            $scope.output = testfactory.lable();
+        });
+    </script>
+    <title>learing argularjs--widuu</title>
+</head>
+<body ng-app='myapp' ng-controller='mytest' >
+<input ng-model='test'>{{test}}
+</p>
+{{output}}
+</body>
+</html>
